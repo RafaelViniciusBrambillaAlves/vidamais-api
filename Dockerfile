@@ -10,7 +10,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# Etapa de produção
+# Etapa de produçãocmd  
 FROM base AS production
 ENV NODE_ENV=production
 COPY --from=build /app/dist ./dist

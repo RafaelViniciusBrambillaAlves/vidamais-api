@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: "3.9"
+
+services:
+  nest:
+    container_name: nest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - nest-code
+    depends_on:
+      - db-nest
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_URL=postgresql://postgres:12345@db-nest:5432/vidamais
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  db-nest:
+    image: postgres:alpine
+    container_name: nest-postgres
+    environment:
+      POSTGRES_DB: vidamais
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - nest-code
+
+networks:
+  nest-code:
+
+volumes:
+  postgres_data:
