@@ -11,6 +11,7 @@ import {
 } from 'typeorm';
 import { User } from './user.entity';
 import { Exam } from './exam.entity';
+import { Unit } from './unit.entity';
 
 export enum SchedulingStatus {
   AGENDADO = 'agendado',
@@ -59,5 +60,5 @@ export class Scheduling {
     inverseJoinColumn: { name: 'exam_id', referencedColumnName: 'id' },
   })
   exams: Exam[];
-  unit: import("c:/Users/rafae/OneDrive/Documentos/vs code/nest-code/src/entity/unit.entity").Unit;
+  unit: Unit;
 }
