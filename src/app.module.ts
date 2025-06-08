@@ -16,7 +16,7 @@ import { Result } from './entity/result.entity';
 import { Scheduling } from './entity/scheduling.entity';
 import { SchedulingModule } from './modules/SchedulingModule';
 import { ExamController } from './Controllers/Exam.controller';
-import { ExamService } from './services/exam.service';
+import { ExamService } from './Services/exam.service';
 import { AgreementController } from './Controllers/Agreement.controller'; 
 import { AgreementService } from './Services/agreement.service';
 import { FilesController } from './Controllers/Files.Controller';

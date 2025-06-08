@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post, UnauthorizedException } from '@nestjs/common';
 import { CreateUserDto } from 'src/DTOs/CreateUserDto';
-import { LoginDto } from 'src/DTOs/LoginDto';
+import { LoginDto } from '../DTOs/LoginDto';
 import { SmsVerificationDto } from 'src/DTOs/SmsVerificationDto';
 import { AuthService } from 'src/Services/Auth.service';
 import { SmsService } from 'src/Services/sms.service';
