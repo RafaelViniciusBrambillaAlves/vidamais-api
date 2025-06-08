@@ -4,13 +4,13 @@ import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { CreateUserDto } from 'src/DTOs/CreateUserDto';
 import { User } from 'src/entity/user.entity';
-import { LoginDto } from '../DTOs/LoginDto';
 import { SmsCode } from 'src/entity/sms-code.entity';
 import { JwtService } from '@nestjs/jwt';
 import { SmsVerificationDto } from 'src/DTOs/SmsVerificationDto';
 import twilio from 'twilio';
 import { UnauthorizedException } from '@nestjs/common';
 import { SmsService } from './sms.service';
+import { LoginDto } from 'src/DTOs/LoginDto';
 
 @Injectable()
 export class AuthService {
