@@ -10,7 +10,17 @@ import { SmsVerificationDto } from 'src/DTOs/SmsVerificationDto';
 import twilio from 'twilio';
 import { UnauthorizedException } from '@nestjs/common';
 import { SmsService } from './sms.service';
-import { LoginDto } from 'src/DTOs/LoginDto';
+import { IsNotEmpty, IsOptional, IsString } from 'node_modules/class-validator/types';
+
+export class LoginDto {
+  @IsString({ message: 'CPF deve ser uma string' })
+  @IsOptional()
+  cpf?: string;
+
+  @IsString({ message: 'Senha deve ser uma string' })
+  @IsNotEmpty({ message: 'Senha é obrigatória' })
+  password: string;
+}
 
 @Injectable()
 export class AuthService {
